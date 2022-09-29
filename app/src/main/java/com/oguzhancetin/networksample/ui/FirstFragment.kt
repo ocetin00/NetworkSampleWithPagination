@@ -19,6 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class FirstFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
+
     private val viewModel: FirstFragmentViewModel by viewModels()
 
     // This property is only valid between onCreateView and
