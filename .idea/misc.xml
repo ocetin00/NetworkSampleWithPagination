@@ -4,8 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/oguzhan/Desktop/NetworkSample/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/oguzhan/Desktop/NetworkSample/app/src/main/res/layout/civilization_card.xml" value="0.32592592592592595" />
         <entry key="..\:/Users/oguzhan/Desktop/NetworkSample/app/src/main/res/layout/content_main.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/oguzhan/Desktop/NetworkSample/app/src/main/res/layout/fragment_first.xml" value="0.2972222222222222" />
+        <entry key="..\:/Users/oguzhan/Desktop/NetworkSample/app/src/main/res/layout/fragment_second.xml" value="0.35104166666666664" />
       </map>
     </option>
   </component>

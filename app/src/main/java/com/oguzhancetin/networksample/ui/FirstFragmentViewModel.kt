@@ -13,16 +13,12 @@ import javax.inject.Inject
 @HiltViewModel
 class FirstFragmentViewModel @Inject constructor(val ageOfRepository: AgeOfRepository) :
     ViewModel() {
-    val civilizationList = MutableLiveData<List<Civilization?>>()
+    val civilizationList = MutableLiveData<List<Civilization>>()
 
     init {
         viewModelScope.launch {
             civilizationList.value = ageOfRepository.getCivilizations()
-            civilizationList.value?.forEach {
-                it?.let {
-                    Log.e("gelen",it.name.toString())
-                }
-            }
+
         }
     }
 }
