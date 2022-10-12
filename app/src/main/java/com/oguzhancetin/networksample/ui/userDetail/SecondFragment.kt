@@ -1,4 +1,4 @@
-package com.oguzhancetin.networksample.ui
+package com.oguzhancetin.networksample.ui.userDetail
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

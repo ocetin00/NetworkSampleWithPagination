@@ -1,7 +1,7 @@
 package com.oguzhancetin.networksample.di
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
-import com.oguzhancetin.networksample.api.AgeOfApi
+import com.oguzhancetin.networksample.data.source.remote.api.GithubApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,12 +14,12 @@ import retrofit2.converter.gson.GsonConverterFactory
 object  AppModule{
 
     @Provides
-    fun provideAgeOfEmpiresApi(): AgeOfApi{
+    fun provideAgeOfEmpiresApi(): GithubApi{
         return Retrofit.Builder()
-            .baseUrl(AgeOfApi.BASE_URL)
+            .baseUrl(GithubApi.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .build()
-            .create(AgeOfApi::class.java)
+            .create(GithubApi::class.java)
     }
 }

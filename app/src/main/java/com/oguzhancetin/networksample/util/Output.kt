@@ -1,4 +1,4 @@
-package com.oguzhancetin.networksample.api
+package com.oguzhancetin.networksample.util
 
 sealed class Output<out T : Any>{
      class Success<out T : Any>(val output : T) : Output<T>()
