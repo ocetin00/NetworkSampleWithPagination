@@ -22,11 +22,8 @@ class UserListFragment : Fragment() {
 
     private var _binding: FragmentUserListBinding? = null
     private val viewModel: UserListFragmentViewModel by viewModels()
-    private lateinit var userRc: RecyclerView
     private lateinit var adapter: RcUserListAdapter
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(

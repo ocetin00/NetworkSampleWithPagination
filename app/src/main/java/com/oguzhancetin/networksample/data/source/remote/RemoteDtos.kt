@@ -1,25 +1,30 @@
 package com.oguzhancetin.networksample.data.source.remote
 
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.Index
+import androidx.room.PrimaryKey
 import com.oguzhancetin.networksample.data.domain.AppUser
 import com.oguzhancetin.networksample.data.domain.AppUserDetails
 
-data class RemoteUser (
-    val id:Long,
-    val login : String,
-    val avatar_url: String,
-    val gravatar_id : String,
-    val url : String,
-    val html_url : String,
-    val followers_url : String,
-    val following_url : String,
-    val gists_url : String,
-    val subscriptions_url : String,
-    val organizations_url : String,
-    val repos_url : String,
-    val events_url : String,
-    val received_events_url : String,
-    val type : String,
-    val starred_url : String
+@Entity(tableName = "users")
+data class RemoteUser(
+    @PrimaryKey val id: Long,
+    @ColumnInfo(name = "user_name") val login: String,
+    @ColumnInfo(name = "avatar_url") val avatar_url: String,
+    @ColumnInfo(name = "gravatar_id") val gravatar_id: String,
+    @ColumnInfo(name = "url") val url: String,
+    @ColumnInfo(name = "html_url") val html_url: String,
+    @ColumnInfo(name = "followers_url") val followers_url: String,
+    @ColumnInfo(name = "following_url") val following_url: String,
+    @ColumnInfo(name = "gists_url") val gists_url: String,
+    @ColumnInfo(name = "subscriptions_url") val subscriptions_url: String,
+    @ColumnInfo(name = "organizations_url") val organizations_url: String,
+    @ColumnInfo(name = "repos_url") val repos_url: String,
+    @ColumnInfo(name = "events_url") val events_url: String,
+    @ColumnInfo(name = "received_events_url") val received_events_url: String,
+    @ColumnInfo(name = "type") val type: String,
+    @ColumnInfo(name = "starred_url") val starred_url: String
 
 
 )
@@ -40,7 +45,6 @@ data class RemoteUserDetails(
 )
 
 
-
 data class RemoteUserResponse(
     val total_count: Long,
     val incomplete_results: Boolean,
@@ -58,8 +62,9 @@ fun RemoteUserDetails.asUserDetailAppModel() = AppUserDetails(
     organisation = company,
     avatarUrl = avatar_url
 )
-fun List<RemoteUser>.asUserAppModel(): List<AppUser>{
-    return map{
+
+fun List<RemoteUser>.asUserAppModel(): List<AppUser> {
+    return map {
         AppUser(
             id = it.id,
             userName = it.login,

@@ -12,14 +12,10 @@ import com.oguzhancetin.networksample.databinding.UserCardBinding
 class RcUserListAdapter :
     PagingDataAdapter<AppUser, RecyclerView.ViewHolder>(DiffCallback){
 
-    inner class CivilizationViewHolder(private val binding: UserCardBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AppUserViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         val binding =
             UserCardBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return AppUserViewHolder(binding)
+        return UserViewHolder(binding)
     }
 
 
@@ -31,11 +27,11 @@ class RcUserListAdapter :
 
 
         override fun areContentsTheSame(oldItem: AppUser, newItem: AppUser): Boolean {
-            return oldItem == newItem  //Auto generated equality check from data classes
+            return oldItem == newItem
         }
     }
 
-    class AppUserViewHolder(private val binding: UserCardBinding):RecyclerView.ViewHolder(binding.root){
+    class UserViewHolder(private val binding: UserCardBinding):RecyclerView.ViewHolder(binding.root){
 
         fun bind(user: AppUser){
             binding.textViewUserName.text = user.userName
@@ -44,6 +40,6 @@ class RcUserListAdapter :
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-       getItem(position)?.let { (holder as AppUserViewHolder).bind(it) }
+       getItem(position)?.let { (holder as UserViewHolder).bind(it) }
     }
 }
