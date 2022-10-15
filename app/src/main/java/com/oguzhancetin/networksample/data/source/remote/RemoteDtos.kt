@@ -72,3 +72,9 @@ fun List<RemoteUser>.asUserAppModel(): List<AppUser> {
         )
     }
 }
+fun RemoteUser.asUserAppModel() =
+        AppUser(
+            id = this.id,
+            userName = this.login,
+            avatarUrl = this.avatar_url
+        )
